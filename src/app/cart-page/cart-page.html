@@ -1,0 +1,22 @@
+<div class="oredersTable">
+    <div class="oredersTableRow" ng-repeat="order in items | filter: search | orderBy:orderByFunc">
+        <div class="nameCell">
+            {{order.product.name}}
+        </div>
+        <div class="priceCell">
+            ${{order.product.price}}
+        </div>
+
+        <div class="totalPriceCell">
+            ${{order.product.price * order.count}}
+        </div>
+
+         <div class="totalPriceCell">
+             <button ng-click="remove(order.product)"> - </button>
+        </div>
+    </div>
+</div>
+
+<span>all price - ${{summ}}</span>
+
+<button type="button" ng-click="submitOrder()"> Submit</button>

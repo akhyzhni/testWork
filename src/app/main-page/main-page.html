@@ -1,0 +1,21 @@
+<div class="productsTable">
+    <input type="search" ng-model="search.name">
+    <input type="checkbox" ng-model="reverse">
+    <div class="productsTableRow" ng-repeat="product in items | filter: search | orderBy:orderByFunc">
+        <div class="numberCell">
+            {{product.number}}
+        </div>
+        <div class="nameCell">
+            {{product.name}}
+        </div>
+        <div class="priceCell">
+           ${{product.price}}
+        </div>
+        <div class="ingridientsCell">
+            {{product.ingridients.join()}}
+        </div>
+        <div class="addCell">
+            <button type="button" ng-click="addProduct(product)">add</button>
+        </div>
+    </div>
+</div>
